@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -82931937
-  m_SortingLayer: 7
+  m_SortingLayer: 10
   m_SortingOrder: 110
   m_MaskInteraction: 0
   m_Sprite: {fileID: 429479200081688609, guid: dcc9aa5b2a824739e9c465597ca70ee4, type: 3}
@@ -192,7 +192,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -82931937
-  m_SortingLayer: 7
+  m_SortingLayer: 10
   m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6943535168657398750, guid: 397136bfc59d7a83fa21bf82e924b71a, type: 3}
@@ -271,7 +271,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &1172358485578614950
@@ -326,6 +326,10 @@ MonoBehaviour:
   shootingclip: {fileID: 8300000, guid: c35bc997b0be92394a456e08a37c325d, type: 3}
   shootingVolume: 0.15
   FireParticles: {fileID: 471606199465996194, guid: ba6e8830a7b8aa2829c2d1dcefcaed7e, type: 3}
+  control: 1
+  on_effector: 0
+  xDistance: 5
+  yDistance: 2
 --- !u!70 &4136753809031480506
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -336,7 +340,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fcef50ee8d47647c99667a3bebfb5d21, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -373,7 +377,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fcef50ee8d47647c99667a3bebfb5d21, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -501,7 +505,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -82931937
-  m_SortingLayer: 7
+  m_SortingLayer: 10
   m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2915034706872494343, guid: da60742408a5c24408256b4baf992afc, type: 3}
@@ -645,7 +649,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -82931937
-  m_SortingLayer: 7
+  m_SortingLayer: 10
   m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1221316241063588470, guid: 94af7f6399758edd6a9c58da94f2b1b4, type: 3}

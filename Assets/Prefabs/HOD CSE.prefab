@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
+  m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -209,3 +209,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UltimateBoss
   within: -10
   PistonPrefab: {fileID: 1457496612652508999, guid: 746b0526a1978032ca70900c6d7b9131, type: 3}
+  WallPrefab: {fileID: 4241530058692890229, guid: 0aacbfc2195e8fe58a6efe5ab4de7ad0, type: 3}
+  TrashThrower: {fileID: 6726783923427970132, guid: 3d169cd5f78c0420988e7459eb24fa4f, type: 3}
+  SteamVent: {fileID: 7013399558051718800, guid: 55c2e0cc23646d7cfa132d824c31601f, type: 3}

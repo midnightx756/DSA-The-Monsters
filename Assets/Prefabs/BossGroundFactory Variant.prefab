@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 8733668464896718889}
   - component: {fileID: 1317514601953329450}
   - component: {fileID: 8801077208236733352}
-  - component: {fileID: 620144628392481555}
-  - component: {fileID: 6701616457172922809}
+  - component: {fileID: 317948489027790326}
   m_Layer: 6
-  m_Name: Coneyor
+  m_Name: Conveyor
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,26 +115,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!252 &620144628392481555
-SurfaceEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4557961209401271276}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 16384
-  m_Speed: -5
-  m_SpeedVariation: 0
-  m_ForceScale: 1
-  m_UseContactForce: 1
-  m_UseFriction: 1
-  m_UseBounce: 1
---- !u!61 &6701616457172922809
-BoxCollider2D:
+--- !u!70 &317948489027790326
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -165,21 +146,12 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.0021704994}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 0.24}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 0.21829477}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.0027131655, y: -0.0010852818}
+  m_Size: {x: 1.2745755, y: 0.2131673}
+  m_Direction: 1
 --- !u!1001 &1972517947195132847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -230,6 +202,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7038247234742504478, guid: ec5be6b1f6f8f6979b9e00a085587ec5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137590925599028356, guid: ec5be6b1f6f8f6979b9e00a085587ec5, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137590925599028356, guid: ec5be6b1f6f8f6979b9e00a085587ec5, type: 3}
+      propertyPath: m_SleepingMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

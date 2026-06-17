@@ -12,6 +12,8 @@ TagManager:
   - CameraFollow
   - FactoryLight
   - FactoryWall
+  - Saw
+  - Trash
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - Boss
   - Laser
   - Player
-  - 
+  - Trash
   - 
   - 
   - 
@@ -67,11 +69,17 @@ TagManager:
   - name: groundChildren
     uniqueID: 2471029073
     locked: 0
+  - name: Steamer
+    uniqueID: 238600443
+    locked: 0
   - name: Ground
     uniqueID: 517743669
     locked: 0
   - name: Wall Children
     uniqueID: 4249093261
+    locked: 0
+  - name: Trash
+    uniqueID: 3616686265
     locked: 0
   - name: Wall
     uniqueID: 2089850781

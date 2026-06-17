@@ -12,6 +12,8 @@ public class UltimateBoss : MonoBehaviour
     [SerializeField] float within = 10f;
     [SerializeField] GameObject PistonPrefab;
     [SerializeField] GameObject WallPrefab;
+
+    [SerializeField] GameObject TrashThrower, SteamVent;
     float orthosize, xx, yy, camHeight, camWidth;
     Vector3 camPos;
 
@@ -40,14 +42,14 @@ public class UltimateBoss : MonoBehaviour
     {
         if(pC2 == null)
         {
-            Debug.Log("Nigga");
+            Debug.Log("Ni*ga");
         }
         if(player == null)
         {
             Debug.Log("HAHA");
         }
         //an.SetBool(IsSummoning, true);
-        cr = StartCoroutine(Attack(1));
+        cr = StartCoroutine(Attack(2));
     }
 
     // Update is called once per frame
@@ -136,11 +138,20 @@ public class UltimateBoss : MonoBehaviour
                 yield return new WaitForSecondsRealtime(20f);
              }
         }
+        if(phase == 2)
+        {
+            while(true){
+                yield return new WaitForSecondsRealtime(5f);
+                TrashSummon();
+                yield return new WaitForSecondsRealtime(10f);
+                SteamSummon();
+                yield return new WaitForSecondsRealtime(20f);
+            }
+        }
     }
 
     void PistonAttack()
     {
-
         //if(an.GetBool(IsSummoning)) {Debug.Log("OOPs, I was summoning"); return;}
         GameObject temp = Instantiate(PistonPrefab);
         temp.transform.position = new Vector2(player.transform.position.x + 10f, -5);
@@ -150,5 +161,17 @@ public class UltimateBoss : MonoBehaviour
     {
         GameObject temp = Instantiate(WallPrefab);
         temp.transform.position = new Vector2(transform.position.x - 10f, 14.3f);
+    }
+
+    void TrashSummon()
+    {
+        GameObject temp = Instantiate(TrashThrower);
+        temp.transform.position = new Vector2(player.transform.position.x, TrashThrower.transform.position.y);
+    }
+
+      void SteamSummon()
+    {
+        GameObject temp = Instantiate(SteamVent);
+        temp.transform.position = new Vector2(transform.position.x - 10f, SteamVent.transform.position.y);
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
     LayerMask layerMask;
     bool isAlive = true;
 
-    public bool control = true;
-    bool isWide = false;
+    public bool control = true, on_effector = false, backeffect = false;
+    bool isWide = false, flip_sprite = true;
     HealthScript health;
     float curtime;
 
@@ -88,7 +89,8 @@ public class PlayerMovement : MonoBehaviour
             flipSprite();
             if(health.gethealth() <= 0)
             {
-                health.Die();
+                SceneManager.LoadScene("GameOverMenu");
+                //health.Die();
             }
             //ClimbLadder();
            // Die(); 
@@ -105,6 +107,10 @@ public class PlayerMovement : MonoBehaviour
         if(!isAlive)
         { return;}
         moveInput = value.Get<Vector2>();
+        if (backeffect && moveInput.x < 0)
+        {
+            moveInput.x = 0;
+        }
         //Debug.Log(moveInput);
     }
 
@@ -141,6 +147,13 @@ public class PlayerMovement : MonoBehaviour
     }
     void Run()
     {
+        if(on_effector && moveInput.x == 0)
+        {
+            flip_sprite = false;
+              legAnimator.SetBool("IsWalking", false);
+            return;
+        }
+        flip_sprite = true;
         Vector2 playerVelocity = new Vector2(moveInput.x * velocity_multiplier, myrigidbody.linearVelocity.y);
       
         myrigidbody.linearVelocity = playerVelocity;
@@ -156,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
 
     void flipSprite()
     {
+        if(!flip_sprite)return;
         bool playerHasHorizontalSpeed = Mathf.Abs(myrigidbody.linearVelocity.x) > Mathf.Epsilon;
         float scale = 14f;
         if(playerHasHorizontalSpeed)
