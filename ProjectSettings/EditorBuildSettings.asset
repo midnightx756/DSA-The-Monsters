@@ -14,5 +14,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOverMenu.unity
     guid: 8a8ca67cc473763e6ade508e5abbcd72
+  - enabled: 1
+    path: Assets/Scenes/HODSir.unity
+    guid: b03885b8be69984488aaf720ffef33d1
+  - enabled: 1
+    path: Assets/Scenes/HODSirPhase2.unity
+    guid: a643e3fcfc9bce42c9215453603ac1b1
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d5ea058ddd299393d82c67f601f2e942
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: b4b3eafc4cb1638dca1f4ca4fd86dd19
+  - enabled: 1
+    path: Assets/Scenes/EndGameMenu.unity
+    guid: 37e4192922069425a87ab85857c2e9a0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

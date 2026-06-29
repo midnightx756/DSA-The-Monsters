@@ -5,6 +5,7 @@ using UnityEngine;
 using System;
 using Unity.VisualScripting;
 using System.Runtime.InteropServices;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public struct BulletInfo
@@ -47,6 +48,7 @@ public class D_man : MonoBehaviour
         int i = 0;
         float hp;
 
+        bool isDead = false; 
         Vector2 vec;
     HealthScript health;
     void Awake()
@@ -80,6 +82,12 @@ public class D_man : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isDead) return;
+        if(health.gethealth() <= 0){
+            StopAllCoroutines();
+            StartCoroutine(Finale());
+            return;
+        }
          playerTransform = Target.GetComponent<Transform>();
         // Debug.Log("Player Is at: " + playerTransform.position);
          transform.position = new Vector2(playerTransform.position.x + distance, transform.position.y);
@@ -105,8 +113,8 @@ public class D_man : MonoBehaviour
                 StartCoroutine(HurtRoutine());
             }
             if(health.gethealth() <= 0){
-                StopCoroutine(att);
-                health.Die();
+                StopAllCoroutines();
+                StartCoroutine(Finale());
            }
         }
     }
@@ -250,6 +258,18 @@ public class D_man : MonoBehaviour
         hasBeenDamaged = false;
     }
 
+
+    IEnumerator Finale()
+    {
+        isDead = true;
+        FindFirstObjectByType<ScoreKeeper>().UpdateScore(1000000);
+        vec.x = transform.position.x;
+        vec.y = 100f;
+         transform.position = vec;
+        yield return new WaitForSecondsRealtime(3f);
+        SceneManager.LoadScene("tuduk");
+        //health.Die();
+    }
      //This is the main attack routing, add any new attacks here, all the atacks are methods so just call the method over here
     IEnumerator AttackRoutine()
     {

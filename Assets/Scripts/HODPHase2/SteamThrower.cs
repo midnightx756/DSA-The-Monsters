@@ -33,7 +33,7 @@ public class SteamThrower : MonoBehaviour
      void OnTriggerEnter2D(Collider2D collision)
      {
         if(isDown) return;
-        Debug.Log("It's time to start");
+        //Debug.Log("It's time to start");
         if(collision.tag == "Player")
           dmg = StartCoroutine(Damage(collision));
      }

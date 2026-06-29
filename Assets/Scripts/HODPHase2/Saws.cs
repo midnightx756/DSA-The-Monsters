@@ -18,7 +18,7 @@ public class Saws : MonoBehaviour
         Saw1 = transform.GetChild(0).gameObject;
         Saw2 = transform.GetChild(1).gameObject;
         ground = GameObject.FindWithTag("Ground");
-        Debug.Log(ground.name);
+        //Debug.Log(ground.name);
         s1 = Saw1.GetComponent<CircleCollider2D>();
         s2 = Saw2.GetComponent<CircleCollider2D>();
         playerCollider = GameObject.FindWithTag("Player").GetComponent<CapsuleCollider2D>();

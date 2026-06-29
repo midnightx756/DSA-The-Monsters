@@ -1,8 +1,12 @@
 using System;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicPlayer : MonoBehaviour
 {
+
+    public GlobalDictionarySO  bgmJam;
     [Header("Widening")]
     [SerializeField] AudioClip WidenMusic;
     [SerializeField][Range(0f, 1f)] float WidenMusicVolume = 0.3f;
@@ -11,6 +15,7 @@ public class MusicPlayer : MonoBehaviour
     public  AudioClip bgm;
     public float  bgmVolume;
 
+    MusicInit music;
     GameObject player;
     void Awake()
     {
@@ -28,11 +33,42 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
-    void Update(){
+     void OnEnable()
+     {
+          SceneManager.sceneLoaded+= OnSceneLoaded;
+     }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        audioPlayer.Stop();
+        bgm = null;
+        music = FindAnyObjectByType<MusicInit>();
+        if(music != null)
+        {
+            if(music.clip == null) return;
+            bgm = music.clip;
+            bgmVolume = music.volume;
+            PlayBGM();
+        }
+        /*(string curry = scene.name;
+        if(bgmJam.Runtimezdict.ContainsKey(curry))
+        {
+            bgm = bgmJam.Runtimezdict[curry];
+            bgmVolume = 0.5f;
+            PlayBGM();
+        }*/
+    }
+     void Update(){
+        if(player != null) 
             gameObject.transform.position = player.transform.position;
     }
 
-    void PlayClip(AudioClip Clip, float volume)
+     void OnDisable()
+     {
+           audioPlayer.Stop();
+          SceneManager.sceneLoaded -= OnSceneLoaded;
+     }
+     void PlayClip(AudioClip Clip, float volume)
     {
 
         audioPlayer.Stop();

@@ -50,8 +50,10 @@ public class Bullet : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-         health.DealDamage(Damage);
-         Debug.Log(health.gethealth());
+            //Debug.Log(other.name + " "+  other.tag);
+            //health.DealDamage(Damage);
+            other.GetComponent<HealthScript>().DealDamage(Damage);
+            //Debug.Log(health.gethealth());
         }
         if(other.tag == "Boss")
         {

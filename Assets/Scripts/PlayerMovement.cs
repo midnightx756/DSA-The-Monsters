@@ -13,13 +13,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float widenTime = 5f;
     [SerializeField] float widenHealth = 150f;
 
+    [SerializeField] float widenCooldown = 10f;
+
     [Header("Shooting")]
-     [SerializeField] float firetime = 0.5f;
-    [SerializeField] GameObject bullet;
-    [SerializeField] Transform gun; 
-    [SerializeField] AudioClip shootingclip;
-    [SerializeField] [Range(0f, 1f)] float shootingVolume = 0.5f;
-    [SerializeField]ParticleSystem FireParticles;
+        [SerializeField] float firetime = 0.5f;
+        [SerializeField] GameObject bullet;
+        [SerializeField] Transform gun;
+        [SerializeField] AudioClip shootingclip;
+        [SerializeField] [Range(0f, 1f)] float shootingVolume = 0.5f;
+        [SerializeField]ParticleSystem FireParticles;
 
     Vector2 moveInput;
     Rigidbody2D myrigidbody;
@@ -34,10 +36,10 @@ public class PlayerMovement : MonoBehaviour
     HealthScript health;
     float curtime;
 
-      Coroutine fire;
-        int jumpcounter = 0;
-        float legposn;
-         float d;
+    Coroutine fire;
+    int jumpcounter = 0;
+    float legposn;
+    float d;
     float startingGravityScale;
 
     [Header("CameraKeeping")]
@@ -48,7 +50,24 @@ public class PlayerMovement : MonoBehaviour
     Vector2 util1;
     MusicPlayer musicplayer;
 
-    void Start()
+    PlayerHealth pH;
+    bool canWide = true;
+     void Awake()
+     {/*
+          //GameObject[] arr = GameObject.FindGameObjectsWithTag("Player");
+         int l = FindObjectsOfType<PlayerMovement>().Length;
+          if(l > 1)
+        {
+            Debug.Log("Duplicate Player Detected");
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }*/
+     }
+     void Start()
     {
         util1 = new Vector2(0,0);
         followPlayer = GameObject.FindWithTag("CameraFollow");
@@ -60,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         startingGravityScale = myrigidbody.gravityScale;
         health = GetComponent<HealthScript>();
         legposn = legcollider2d.offset.y;
-
+        pH = FindAnyObjectByType<PlayerHealth>();
         d = firetime;
 
         musicplayer = FindFirstObjectByType<MusicPlayer>();
@@ -83,14 +102,17 @@ public class PlayerMovement : MonoBehaviour
                 legcollider2d.offset = new Vector2(legcollider2d.offset.x, legposn);
                 musicplayer.StopAudio();
                 musicplayer.PlayBGM();
+                StartCoroutine(WidenWait());
+                StartCoroutine(pH.moveDir(widenCooldown));
                 // health.PermaBoost(-widenHealth);
              }
             Run();
             flipSprite();
             if(health.gethealth() <= 0)
             {
+                isAlive = false;
                 SceneManager.LoadScene("GameOverMenu");
-                //health.Die();
+                //Destroy(gameObject);
             }
             //ClimbLadder();
            // Die(); 
@@ -134,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!control) return;
         if(isWide)return;
-        
+        if(!canWide) return;
         isWide = true;
         transform.localScale = new Vector2(70, 14);
         curtime = Time.time;
@@ -220,9 +242,23 @@ public class PlayerMovement : MonoBehaviour
         FindFirstObjectByType<GameSession>().ProcesslayerDeath();
     }
 */
+
+    //Wait For widening
+    IEnumerator WidenWait()
+    {
+        canWide = false;
+        yield return new WaitForSecondsRealtime(widenCooldown);
+        canWide = true;
+    }
     void OnAttack(InputValue value)
     {
-        if(!control) return;
+        if (!control)
+        {
+            if(fire != null)
+                StopCoroutine(fire);
+            gunAnimator.SetBool("isFiring", false);
+            return;
+        }
          if(!isAlive)
         { return;}
         

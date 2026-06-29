@@ -83,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 2038414079
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1042077698575510967, guid: f85524061cdfdb93e906f22ab8d0af4e, type: 3}
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.47, y: 5.09}
+  m_Size: {x: 6.47, y: 4.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -212,3 +212,4 @@ MonoBehaviour:
   WallPrefab: {fileID: 4241530058692890229, guid: 0aacbfc2195e8fe58a6efe5ab4de7ad0, type: 3}
   TrashThrower: {fileID: 6726783923427970132, guid: 3d169cd5f78c0420988e7459eb24fa4f, type: 3}
   SteamVent: {fileID: 7013399558051718800, guid: 55c2e0cc23646d7cfa132d824c31601f, type: 3}
+  phase1Heath: 100000
