@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
             t = UnityEngine.Random.Range(0, n);
             temp = Instantiate(EnemyPrefabs[t]);
             temp.transform.position = transform.position;
-            yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(1f, 7f));
+            yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(5f, 7f));
         }
     }
 }

@@ -17,6 +17,7 @@ public class MenuControl : MonoBehaviour
 
     public void restartGame()
     {
+        Debug.Log("Starting Game");
         ScoreKeeper sk = FindAnyObjectByType<ScoreKeeper>();
         sk.reset();
         SceneManager.LoadScene("tuduk");
@@ -24,6 +25,7 @@ public class MenuControl : MonoBehaviour
 
     public void ToMenu()
     {
+        Debug.Log("Menu");
         SceneManager.LoadScene("MainMenu");
     }
 

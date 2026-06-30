@@ -90,5 +90,8 @@ TagManager:
   - name: Player
     uniqueID: 4212035359
     locked: 0
+  - name: Hider Ground
+    uniqueID: 3045394279
+    locked: 0
   m_RenderingLayers:
   - Default

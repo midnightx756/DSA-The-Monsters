@@ -254,7 +254,7 @@ public class UltimateBoss : MonoBehaviour
                 //an.SetBool(IsSummoningWall, false);
                 WallSpawn();
                 isInitiating = false;
-                yield return new WaitForSecondsRealtime(20f);
+                yield return new WaitForSecondsRealtime(10f);
              }
         }
         if(phase == 2)
