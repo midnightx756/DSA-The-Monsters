@@ -286,15 +286,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8220492853202553661, guid: 3fd046c7877d2fea89f01ba02d9e935a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8220492853202553661, guid: 3fd046c7877d2fea89f01ba02d9e935a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8220492853202553661, guid: 3fd046c7877d2fea89f01ba02d9e935a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.54
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -382,8 +382,8 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -408,8 +408,8 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 15
-  m_Depth: -1
+  orthographic size: 20
+  m_Depth: -100
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -432,8 +432,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.30063936, y: 0.000000028775172, z: 0.0000000090705745, w: 0.9537379}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0.3006394, y: 0.00000002883489, z: 0.000000009260018, w: 0.9537379}
+  m_LocalPosition: {x: 0, y: 0, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -456,7 +456,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 2
+  UpdateMethod: 1
   BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0
@@ -786,6 +786,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 291676760829634979, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 291676760829634979, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1265759242693155213, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -826,9 +834,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2136675105740009801, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cb23e50f24663f7ca8a01333a80b217, type: 3}
+    - target: {fileID: 2136675105740009801, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596498010414524152, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596498010414524152, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5880438610987262309, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
       propertyPath: m_Name
       value: BadSky_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880438610987262309, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522946677392278992, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: height
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985466187871012758, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985466187871012758, guid: 9ad4305fc67878a5ba4e03a56c99f94a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -853,7 +893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 903063005779067534, guid: 59978984b7776bb46bef39ec884d5360, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 903063005779067534, guid: 59978984b7776bb46bef39ec884d5360, type: 3}
       propertyPath: m_LocalRotation.w
@@ -884,12 +924,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2137074659538134809, guid: 59978984b7776bb46bef39ec884d5360, type: 3}
+      propertyPath: Lens.OrthographicSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137074659538134809, guid: 59978984b7776bb46bef39ec884d5360, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 606058001}
     - target: {fileID: 5376195036457154889, guid: 59978984b7776bb46bef39ec884d5360, type: 3}
+      propertyPath: FollowOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376195036457154889, guid: 59978984b7776bb46bef39ec884d5360, type: 3}
       propertyPath: FollowOffset.z
-      value: -10
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376195036457154889, guid: 59978984b7776bb46bef39ec884d5360, type: 3}
+      propertyPath: TrackerSettings.RotationDamping.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376195036457154889, guid: 59978984b7776bb46bef39ec884d5360, type: 3}
+      propertyPath: TrackerSettings.RotationDamping.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6531423239495304533, guid: 59978984b7776bb46bef39ec884d5360, type: 3}
       propertyPath: m_Name

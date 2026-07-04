@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2732669876232754210, guid: 74dd7cf20bdbbcdd99a25736fd983de0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.4
+      value: 47.5
       objectReference: {fileID: 0}
     - target: {fileID: 2732669876232754210, guid: 74dd7cf20bdbbcdd99a25736fd983de0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parallax Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6723489268744106221, guid: 74dd7cf20bdbbcdd99a25736fd983de0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723489268744106221, guid: 74dd7cf20bdbbcdd99a25736fd983de0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.68
+      objectReference: {fileID: 0}
     - target: {fileID: 7664012723700186231, guid: 74dd7cf20bdbbcdd99a25736fd983de0, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -86,3 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b02da1082ba2f1297e2623f6b85900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Walll2
+  layer1Speed: 0.001
+  layer2Speed: 0.0002
+  layer3Speed: 0.025
+  envLight: {fileID: 0}
+  maxIntensity: 4
+  minIntensity: 1
+  IntensityFactor: 2

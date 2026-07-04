@@ -61,6 +61,25 @@ public class Bullet : MonoBehaviour
             if(health != null)
                 health.DealDamage(Damage);
         }
+
+        if(other.tag== "BossParts")
+        {
+            health = other.GetComponent<HealthScript>();
+            if(health != null)
+                health.DealDamage(Damage);
+            else
+            {
+                GameObject p = other.transform.parent.gameObject;
+               if(p != null)
+                {
+                    health = p.GetComponent<HealthScript>();
+                    if(health != null)
+                    {
+                        health.DealDamage(Damage);
+                    }
+                }
+            }
+        }
         if(other.tag == "FactoryWall")
         {
             HealthScript s = other.GetComponent<HealthScript>();

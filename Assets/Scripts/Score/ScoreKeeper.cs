@@ -49,8 +49,8 @@ public class ScoreKeeper : MonoBehaviour
         if(!phaseDas && score >= l1Score && score < l2Score)
         {
             phaseDas = true;
-            Debug.Log("Loading Darshan Battle");
-            SceneManager.LoadScene("DarshanBattle");
+            Debug.Log("Loading Siddhant");
+            SceneManager.LoadScene("Siddhant");
         }
         if(!phaseHOD && score >= l2Score)
         {

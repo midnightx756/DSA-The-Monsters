@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -82931937
-  m_SortingLayer: 10
+  m_SortingLayer: 13
   m_SortingOrder: 110
   m_MaskInteraction: 0
   m_Sprite: {fileID: 429479200081688609, guid: dcc9aa5b2a824739e9c465597ca70ee4, type: 3}
@@ -192,7 +192,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -82931937
-  m_SortingLayer: 10
+  m_SortingLayer: 13
   m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6943535168657398750, guid: 397136bfc59d7a83fa21bf82e924b71a, type: 3}
@@ -320,6 +320,7 @@ MonoBehaviour:
   jumpSpeed: 30
   widenTime: 60
   widenHealth: 150
+  widenCooldown: 20
   firetime: 0.2
   bullet: {fileID: 1071429095531448618, guid: 2b2cec1609227bdc78ee347377af04e8, type: 3}
   gun: {fileID: 6478446686567151931}
@@ -328,6 +329,7 @@ MonoBehaviour:
   FireParticles: {fileID: 471606199465996194, guid: ba6e8830a7b8aa2829c2d1dcefcaed7e, type: 3}
   control: 1
   on_effector: 0
+  backeffect: 0
   xDistance: 5
   yDistance: 2
 --- !u!70 &4136753809031480506
@@ -505,7 +507,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -82931937
-  m_SortingLayer: 10
+  m_SortingLayer: 13
   m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2915034706872494343, guid: da60742408a5c24408256b4baf992afc, type: 3}
@@ -649,7 +651,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -82931937
-  m_SortingLayer: 10
+  m_SortingLayer: 13
   m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1221316241063588470, guid: 94af7f6399758edd6a9c58da94f2b1b4, type: 3}

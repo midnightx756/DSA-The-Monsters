@@ -120,6 +120,12 @@ public class BounceBreaker : MonoBehaviour
             ob.x = temp.transform.position.x - rebound;
             ob.y = temp.transform.position.y + 0.5f;
             temp.transform.position = ob;
+            ScoreKeeper sc = FindAnyObjectByType<ScoreKeeper>();
+            if(sc != null)
+            {
+                sc.UpdateScore(100);
+                Debug.Log("Score: " + sc.GetScore());
+            }
             Debug.Log("KnockBacked");
             pm.control = true;
             
