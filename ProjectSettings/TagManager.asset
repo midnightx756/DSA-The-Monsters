@@ -15,6 +15,7 @@ TagManager:
   - Saw
   - Trash
   - BossParts
+  - GroundChild
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - Player
   - Trash
   - Enemy
-  - 
+  - EnvironmentTraps
   - 
   - 
   - 

@@ -16,7 +16,7 @@ public class UltimateBoss : MonoBehaviour
     [SerializeField] GameObject WallPrefab;
 
     [SerializeField] GameObject TrashThrower, SteamVent;
-    float orthosize, xx, yy, camHeight, camWidth;
+    float orthosize, xx, yy, camHeight, camWidth, k;
     Vector3 camPos;
 
 
@@ -25,6 +25,10 @@ public class UltimateBoss : MonoBehaviour
     GameObject player;
     Rigidbody2D playerRigidBody2D;
     bool isDead = false;
+
+    [Header("Phase 2")]
+        [SerializeField] float attackpadding = 10f;
+    GameObject Ground;
 
     [Header("Do not edit")]
     public static int phase;
@@ -109,7 +113,14 @@ public class UltimateBoss : MonoBehaviour
         player = GameObject.FindWithTag("Player");
           playerRigidBody2D = player.GetComponent<Rigidbody2D>();
           pC2 = FindAnyObjectByType<CinemachineCamera>();
+
+          Ground =  GameObject.FindGameObjectWithTag("GroundChild");
+          if(Ground == null)
+        {
+            Debug.Log("Ground Not accquired");
+        }
           health = GetComponent<HealthScript>();
+          k = (health.gethealth() > 0) ?  health.gethealth() : 100;
           an = GetComponent<Animator>();
           if(phase == 1){
             Debug.Log("Yeah Repositioning");
@@ -261,10 +272,43 @@ public class UltimateBoss : MonoBehaviour
         {
             Debug.Log("Phase 2 initiated");
             while(true){
-                if(isDead || this == null) yield break;
+                if(isDead || this == null|| player == null|| Ground == null) yield break;
                 yield return new WaitForSecondsRealtime(5f);
-                  isInitiating = true;
-                an.SetTrigger("SpawnTrash");
+                if(Mathf.Abs(player.transform.position.x - Ground.transform.position.x) > attackpadding)
+                {
+                    isInitiating = true;
+                    an.SetTrigger("SpawnSteam");
+                    //yield return new WaitForSecondsRealtime(15f);
+                    var clipInfo = an.GetCurrentAnimatorClipInfo(0);
+                    AnimationClip clip = clipInfo[0].clip;
+                    int f = Mathf.RoundToInt(clip.length * clip.frameRate);
+                    for(int i = 0; i< f; i++)
+                    {
+                        yield return new WaitForEndOfFrame();
+                    }
+                    isInitiating = false;
+                    SteamSummon();
+                     yield return new WaitForSecondsRealtime(health.gethealth()/ k *  10 + 1);
+                }
+                else if(Mathf.Abs(player.transform.position.x - Ground.transform.position.x) <= attackpadding)
+                {
+                      isInitiating = true;
+                     an.SetTrigger("SpawnTrash");
+                    //yield return new WaitForSecondsRealtime(15f);
+                    var clipInfo = an.GetCurrentAnimatorClipInfo(0);
+                    AnimationClip clip = clipInfo[0].clip;
+                    int f = Mathf.RoundToInt(clip.length * clip.frameRate);
+                    for(int i = 0; i< f; i++)
+                    {
+                        yield return new WaitForEndOfFrame();
+                    }
+                    isInitiating = false;
+                    TrashSummon();
+                    //yield return new WaitForSecondsRealtime(20f);
+                    yield return new WaitForSecondsRealtime(health.gethealth()/ k *  10 + 1);
+                }
+                //isInitiating = true;
+                /*an.SetTrigger("SpawnTrash");
                 //yield return new WaitForSecondsRealtime(15f);
                 var clipInfo = an.GetCurrentAnimatorClipInfo(0);
                 AnimationClip clip = clipInfo[0].clip;
@@ -288,7 +332,7 @@ public class UltimateBoss : MonoBehaviour
                 }
                 isInitiating = false;
                 SteamSummon();
-                yield return new WaitForSecondsRealtime(20f);
+                yield return new WaitForSecondsRealtime(20f);*/
             }
         }
     }

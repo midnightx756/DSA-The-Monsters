@@ -330,6 +330,8 @@ MonoBehaviour:
   control: 1
   on_effector: 0
   backeffect: 0
+  follow: 1
+  isUsingGun: 0
   xDistance: 5
   yDistance: 2
 --- !u!70 &4136753809031480506
@@ -428,6 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthScript
   health: 100
+  defence: 10
 --- !u!1 &6964322471530053540
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08afa51ecc2a340cab6a78a7fa2cc219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreKeeper
-  l1Score: 3000
-  l2Score: 2050000
+  l1Score: 2000
+  l2Score: 2005000

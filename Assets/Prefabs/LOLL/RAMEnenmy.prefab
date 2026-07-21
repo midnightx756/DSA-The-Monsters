@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8122990467666630065, guid: ec7d5c2097c5779ed8c4c9f2dface012, type: 3}
-  m_Color: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthScript
   health: 150
+  defence: 0
 --- !u!114 &4959011067230540841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,5 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32b8b1bd54c3c2fcb4f1cbd1092011b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rammer
-  accel: 0.1
-  force: {x: 8000, y: 1000}
+  accel: 0.08
+  force: {x: 30, y: 1000}
+  baseDamage: 2

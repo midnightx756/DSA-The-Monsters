@@ -787,10 +787,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossGround
       objectReference: {fileID: 0}
-    - target: {fileID: 6246746203506552342, guid: d8468576810b63d91893fe699d391f29, type: 3}
-      propertyPath: speed
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 6471740224371923730, guid: d8468576810b63d91893fe699d391f29, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5505691203155166688, guid: 3b797ec258d44ab3da9b1354b161f96f, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.008930445, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthScript
   health: 200
+  defence: 0
 --- !u!114 &2111516862669191672
 MonoBehaviour:
   m_ObjectHideFlags: 0

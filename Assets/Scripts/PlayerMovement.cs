@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     LayerMask layerMask;
     bool isAlive = true;
 
-    public bool control = true, on_effector = false, backeffect = false;
+    public bool control = true, on_effector = false, backeffect = false, follow = true, isUsingGun = false;
     bool isWide = false, flip_sprite = true;
     HealthScript health;
     float curtime;
@@ -91,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(followPlayer != null){
                 //This portion is so that the object that is supposed to hol cinemachine transform works
+                if(!follow) return;
                 util1.x = (float)(transform.position.x + xDistance);
                 util1.y = (float)(transform.position.y + yDistance);
                 followPlayer.transform.position = util1;
@@ -264,6 +265,7 @@ public class PlayerMovement : MonoBehaviour
         
        if(value.isPressed)
         {
+            isUsingGun = true;
             gunAnimator.SetBool("isFiring", true);
             if(isWide)
                 firetime = 0.1f;
@@ -274,6 +276,7 @@ public class PlayerMovement : MonoBehaviour
         else{
             if(fire != null)
                 StopCoroutine(fire);
+            isUsingGun = false;
             gunAnimator.SetBool("isFiring", false);
         }
     }

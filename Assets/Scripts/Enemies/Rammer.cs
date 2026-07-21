@@ -5,6 +5,7 @@ public class Rammer : MonoBehaviour
 {
     [SerializeField] float accel;
     [SerializeField] Vector2 force;
+    [SerializeField] float baseDamage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     Rigidbody2D  rb2D;
     GameObject player;
@@ -40,6 +41,7 @@ public class Rammer : MonoBehaviour
         if(health.gethealth() <= 0)
         {
             isDead = true;
+            StopAllCoroutines();
             StartCoroutine(Death());
             return;
         }
@@ -73,6 +75,7 @@ public class Rammer : MonoBehaviour
      IEnumerator Death()
     {
         isDead = true;
+        player.GetComponent<PlayerMovement>().control = true;
         anim.StopPlayback();
         util.y *= -1;
         transform.localScale = util;
@@ -91,10 +94,10 @@ public class Rammer : MonoBehaviour
     }
     IEnumerator Throw(GameObject player)
     {
-        player.GetComponent<HealthScript>().DealDamage(Mathf.Abs(rb2D.linearVelocityX) * rb2D.mass/100);
+        player.GetComponent<HealthScript>().DealDamage(baseDamage * (1 + Mathf.Abs(rb2D.linearVelocityX)/ (1 + Mathf.Abs(rb2D.linearVelocityX))));
         pm= player.GetComponent<PlayerMovement>();
         pm.control = false;
-        util2.x = (rb2D.linearVelocityX > 0)? force.x : -force.x;
+        util2.x = (Mathf.Abs(rb2D.linearVelocityX) > force.x ?  Mathf.Abs(rb2D.linearVelocityX) : force.x) * rb2D.mass *((rb2D.linearVelocityX > 0)? 1 : -1);
         util2.y = force.y;
         player.GetComponent<Rigidbody2D>().AddForce(util2, ForceMode2D.Force);
         yield return new WaitForSecondsRealtime(0.4f);

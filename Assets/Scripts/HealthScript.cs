@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthScript : MonoBehaviour
 {
     public float health = 50f;
+    [SerializeField] float defence = 0f;
     float curhealth;
 
     void Awake()
@@ -13,7 +14,7 @@ public class HealthScript : MonoBehaviour
     }
     public void DealDamage(float amt)
     {
-        health -=amt;
+        health -= (defence < 0)? amt : (100 - defence)/100* amt;
     }
 
      public void Die()
@@ -24,6 +25,16 @@ public class HealthScript : MonoBehaviour
      public void PermaBoost(float amt)
     {
         health += amt;
+    }
+
+    public float getDefence()
+    {
+        return defence;
+    }
+
+    public void BoostDefence(float boost)
+    {
+        defence += boost;
     }
 
     public float gethealth()
