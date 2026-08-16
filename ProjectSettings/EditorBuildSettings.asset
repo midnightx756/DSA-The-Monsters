@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HODSirPhase2.unity
     guid: a643e3fcfc9bce42c9215453603ac1b1
+  - enabled: 1
+    path: Assets/Scenes/ShitassAXEA.unity
+    guid: c742f2c16afb3e628ae786c15c13ae28
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

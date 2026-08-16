@@ -222,7 +222,7 @@ public class UltimateBoss : MonoBehaviour
         FindAnyObjectByType<ScoreKeeper>().UpdateScore(2000000);
         yield return new WaitForSeconds(5);
         Debug.Log("Won");
-        SceneManager.LoadScene("EndGameMenu");
+        SceneManager.LoadScene("tuduk");
         //health.Die();
      }
 

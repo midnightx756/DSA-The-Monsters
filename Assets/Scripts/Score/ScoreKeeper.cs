@@ -8,6 +8,10 @@ public class ScoreKeeper : MonoBehaviour
 
     [SerializeField] int l1Score;
     [SerializeField] int l2Score;
+
+    [SerializeField] int l3Score;
+    [SerializeField] int victoryScore;
+
     public static bool phaseDas = false, phaseHOD = false;
      void Awake()
      {
@@ -58,5 +62,10 @@ public class ScoreKeeper : MonoBehaviour
             Debug.Log("Loading HOD Battle");
             SceneManager.LoadScene("HODSir");
         }
+    }
+
+    public void  LoadOnDemand(string Scene)
+    {
+        SceneManager.LoadScene(Scene);
     }
 }
