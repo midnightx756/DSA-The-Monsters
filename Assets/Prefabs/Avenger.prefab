@@ -325,7 +325,7 @@ MonoBehaviour:
   bullet: {fileID: 1071429095531448618, guid: 2b2cec1609227bdc78ee347377af04e8, type: 3}
   gun: {fileID: 6478446686567151931}
   shootingclip: {fileID: 8300000, guid: c35bc997b0be92394a456e08a37c325d, type: 3}
-  shootingVolume: 0.15
+  shootingVolume: 0.283
   FireParticles: {fileID: 471606199465996194, guid: ba6e8830a7b8aa2829c2d1dcefcaed7e, type: 3}
   control: 1
   on_effector: 0

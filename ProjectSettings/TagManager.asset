@@ -16,6 +16,7 @@ TagManager:
   - Trash
   - BossParts
   - GroundChild
+  - Shield
   layers:
   - Default
   - TransparentFX

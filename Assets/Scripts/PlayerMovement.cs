@@ -306,4 +306,9 @@ public class PlayerMovement : MonoBehaviour
             Destroy(effect.gameObject, effect.main.duration + effect.main.startLifetime.constantMax);
         }
     }
+
+    public bool IsPlayerWide()
+    {
+        return isWide;
+    }
 }

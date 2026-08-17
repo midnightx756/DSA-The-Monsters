@@ -100,6 +100,11 @@ public class Bullet : MonoBehaviour
                 }
             }
         }
+
+        /*if(other.tag == "Shield")
+        {
+            Debug.Log("LOL");
+        }*/
         Destroy(gameObject);
     }
 }
