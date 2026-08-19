@@ -1,15 +1,40 @@
-CREDITS:
+CREDITS
+=======
 
-[ FONTS ]
-Alagard - Hewett Tsoi(dafont.com)
+This project uses assets created by the following talented individuals and
+organizations. All assets are used under their respective licenses (CC-BY or
+similar). Please respect the license terms when re‑using these assets.
 
-[ MUSIC ]
-"Game" - Elijah K (CC-BY-4.0)(Free Music Archive (FMA))
-"Flyte" - Dr Gertman(CC-BY-4.0)(Free Music Archive (FMA))
-"Technological Integration (La Integración de la Tecnología) – Cyberpunk _ Darksynth Metal Instrumental" - David J. Barrios (CC - BY - 4.0)(Free Music Archive(FMA))
+FONTS
+-----
+- Alagard – Hewett Tsoi
+  Source: dafont.com
+  License: Free for personal use (check dafont.com for details)
 
-[ Pictures ]
-"Storm Clouds" - Alabama Extension(CC-BY-1.0)(flickr.com)
+MUSIC
+-----
+- "Game" – Elijah K
+  Source: Free Music Archive (FMA)
+  License: CC-BY-4.0
+- "Flyte" – Dr Gertman
+  Source: Free Music Archive (FMA)
+  License: CC-BY-4.0
+- "Technological Integration (La Integración de la Tecnología) – Cyberpunk Darksynth Metal Instrumental"
+  – David J. Barrios
+  Source: Free Music Archive (FMA)
+  License: CC-BY-4.0
 
-[ SFX ]
-"Dirty EM Power Discharge A" - nlux(CC-BY-4.0)(freesound.org)
+PICTURES
+--------
+- "Storm Clouds" – Alabama Extension
+  Source: Flickr
+  License: CC-BY-1.0
+
+SFX
+---
+- "Dirty EM Power Discharge A" – nlux
+  Source: freesound.org
+  License: CC-BY-4.0
+
+If you use any of these assets in your own project, please include this
+Credits.txt file in your distribution as required by the licenses.
