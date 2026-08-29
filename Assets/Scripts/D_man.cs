@@ -237,23 +237,35 @@ public class D_man : MonoBehaviour
     {
         StopCoroutine(att);
         hasBeenDamaged = true;
-        GameObject handL = transform.GetChild(2).gameObject;
-        GameObject handR = transform.GetChild(3).gameObject;
-        for(int i = 0; i<= 40; i++)
+        GameObject head = transform.GetChild(0).gameObject;
+        Vector2 ll = head.transform.localScale;
+        Vector2 tt = new();
+        for(int i = 0; i< 5; i++)
         {
-            handL.transform.rotation = Quaternion.Euler(0,0, -i);
-            handR.transform.rotation = Quaternion.Euler(0,0, i);
-            yield return new WaitForSecondsRealtime(0.002f);
+            int m = UnityEngine.Random.Range(0, 2);
+            if(m == 0)
+            {
+                tt.x = 14;
+                tt.y = 0.5f;
+            }
+            else
+            {
+                 tt.x = 0.5f;
+                tt.y = 14;
+            }
+            head.transform.localScale = tt;
+            yield return new WaitForSecondsRealtime(0.5f);
         }
 
-        for(int i = 0; i< 10; i++){
-            vec.y = -1 * transform.localScale.x;
-            vec.x = transform.localScale.y;
-            transform.localScale = vec;
-            yield return new WaitForEndOfFrame();
-            vec.y = -1 * transform.localScale.y;
-            transform.localScale = vec;
+        head.transform.localScale = ll;
+        legL.transform.rotation = Quaternion.identity;
+         legR.transform.rotation = Quaternion.identity;
+        for(int i = 0; i<1000; i++)
+        {
+            transform.rotation = Quaternion.Euler(0,0, transform.localEulerAngles.z + 100);
+             yield return new WaitForSecondsRealtime(0.01f);
         }
+        transform.rotation = Quaternion.identity;
         att = StartCoroutine(AttackRoutine());
         hasBeenDamaged = false;
     }

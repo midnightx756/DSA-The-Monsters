@@ -119,7 +119,7 @@ public class SiddhuPaaji : MonoBehaviour
         if(sk != null)
             sk.UpdateScore(1000000);
         yield return new WaitForSecondsRealtime(5f);
-        SceneManager.LoadScene("DarshanBattle");
+        SceneManager.LoadScene("DaBattle");
     }
 
     IEnumerator walk()

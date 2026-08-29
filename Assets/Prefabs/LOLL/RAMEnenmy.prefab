@@ -217,6 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32b8b1bd54c3c2fcb4f1cbd1092011b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rammer
-  accel: 0.08
+  accel: 5
   force: {x: 30, y: 1000}
   baseDamage: 2

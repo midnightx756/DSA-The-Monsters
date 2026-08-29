@@ -54,7 +54,7 @@ public class ScoreKeeper : MonoBehaviour
         {
             phaseDas = true;
             Debug.Log("Loading Siddhant");
-            SceneManager.LoadScene("Siddhant");
+            SceneManager.LoadScene("Sid");
         }
         if(!phaseHOD && score >= l2Score)
         {

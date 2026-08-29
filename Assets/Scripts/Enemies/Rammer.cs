@@ -49,7 +49,7 @@ public class Rammer : MonoBehaviour
         {
             if(player.transform.position.x > transform.position.x)
             {
-                  rb2D.linearVelocityX = accel * Time.time;
+                  rb2D.linearVelocityX += accel * Time.deltaTime;
                   if(transform.localScale.x > 0 )
                     util.x *= -1;
                   transform.localScale = util;
@@ -58,7 +58,7 @@ public class Rammer : MonoBehaviour
                 if(transform.localScale.x < 0 )
                     util.x *= -1;
                   transform.localScale = util;
-                rb2D.linearVelocityX = -accel * Time.time;
+                rb2D.linearVelocityX+= -accel * Time.deltaTime;
             }
         }
     }

@@ -1,12 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
-using NUnit.Framework;
+//using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 [Serializable]
 public struct Scores
@@ -21,19 +19,29 @@ public class ManageGame : MonoBehaviour
 
     [SerializeField] float TimeAvailible;
 
-    [SerializeField] TextMeshProUGUI txt;
-    [SerializeField] Image Clock;
+    [SerializeField] Canvas ClockCanvas;
+    TextMeshProUGUI txt;
+    Image Clock;
 
     [Header("Slabs - Keep it sorted")]
     public List<Scores> rangeList;
     float n;
 
+    int initScore;
     bool end = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sc = FindAnyObjectByType<ScoreKeeper>();
+        initScore = sc.GetScore();
         n = Time.time;
+
+        txt = ClockCanvas.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
+        Clock = ClockCanvas.transform.GetChild(0).gameObject.GetComponent<Image>();
+        if (!ScoreKeeper.phaseHOD)
+        {
+            ClockCanvas.enabled = false;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -45,8 +53,8 @@ public class ManageGame : MonoBehaviour
             return;
         }
 
-        txt.text =  "" +  (TimeAvailible -  (Time.time - n));
-       //Clock.fillAmount = 1;
+        txt.text =  "" +  (int)(TimeAvailible -  (Time.time - n));
+       Clock.fillAmount = 1 - (Time.time - n)/TimeAvailible;
     }
 
     IEnumerator Finish()
@@ -59,12 +67,12 @@ public class ManageGame : MonoBehaviour
         while(l <= h)
         {
             mid = l +  (h-l)/2;
-            if(sc.GetScore() >= rangeList[mid].lower && sc.GetScore() <=  rangeList[mid].upper)
+            if(sc.GetScore() >= rangeList[mid].lower + initScore && sc.GetScore() <=  rangeList[mid].upper + initScore)
             {
                 f = true;
                 break;
             }
-            else if(sc.GetScore() < rangeList[mid].lower)
+            else if(sc.GetScore() < rangeList[mid].lower + initScore)
                 h = mid - 1;
             else
                 l = mid + 1;
